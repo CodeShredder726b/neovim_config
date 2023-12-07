@@ -1,1 +1,14 @@
 # neovim_config
+- telescope
+- nvim-tree
+- nvim-cmp
+- autopairs
+- lualine
+- whichkey
+- options
+- treesitter
+- lsp.mason
+- lsp.handlers
+- lsp.null-ls
+- copilot
+- nyoom
