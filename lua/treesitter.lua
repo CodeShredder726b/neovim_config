@@ -14,8 +14,6 @@ treesitter.setup({
   indent = { enable = true },
   -- ensure these language parsers are installed
   ensure_installed = {
-    "c",    
-    "cpp",
     "json",
     "javascript",
     "typescript",
