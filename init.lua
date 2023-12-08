@@ -1,34 +1,46 @@
 require('plugins')
---require('keymaps')
-require('telescope')
+
+require("copilot").setup({
+  panel = {
+    auto_refresh = false,
+    keymap = {
+      accept = "<CR>",
+      jump_prev = "[[",
+      jump_next = "]]",
+      refresh = "gr",
+      open = "<M-CR>",
+    },
+  },
+  suggestion = {
+    auto_trigger = true,
+    keymap = {
+      accept = "<M-l>",
+      prev = "<M-[>",
+      next = "<M-]>",
+      dismiss = "<C-]>",
+    },
+  },
+})
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
-
--- empty setup using defaults
-require("nvim-tree").setup()
-
-require('nvim-cmp')
-
-require('autopairs')
+vim.opt.termguicolors = true		-- set termguicolors to enable highlight groups
 
 vim.cmd("colorscheme onedark")
 --vim.cmd("colorscheme nightfly")
-
--- empty setup using defaults
---require('lualine').get_config()
+--require("nyoom")
 require('lualine').setup()
 --require('lualine')
-
-require("whichkey")
+require("nvim-tree").setup()
+--require('keymaps')
+require('telescope')
+--require('nvim-cmp')
+--require('autopairs')
 require("options")
 require("treesitter")
 require("lsp.mason")
-require("lsp.handlers").setup()
+--require("lsp.handlers").setup()
+require("lsp.handlers")
 require("lsp.null-ls")
-require("copilot").setup()
---require("nyoom")
+require("whichkey")
