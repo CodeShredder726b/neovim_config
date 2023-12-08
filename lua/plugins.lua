@@ -40,70 +40,52 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-	-- Packer (package manager)
-	use ("wbthomason/packer.nvim") --manage itself	
-	
-	-- Telescope (fuzzy finder)
+	use ("wbthomason/packer.nvim") -- Have packer manage itself	
+
+	-- telescope
 	use("nvim-lua/plenary.nvim") -- Lua functions that Telescope plugin use
 	use("nvim-telescope/telescope.nvim")
-
+	
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
+
 	-- vs-code like icons
 	use("nvim-tree/nvim-web-devicons")
-	
+
 	-- autocompletion
-	use("hrsh7th/nvim-cmp") -- completion plugin
-	use("hrsh7th/cmp-buffer") -- source for text in buffer
-	use("hrsh7th/cmp-path") -- source for file system paths
+	--use("hrsh7th/nvim-cmp") -- completion plugin
+	--use("hrsh7th/cmp-buffer") -- source for text in buffer
+	--use("hrsh7th/cmp-path") -- source for file system paths
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
-	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-	use("rafamadriz/friendly-snippets") -- useful snippets
+	--use("L3MON4D3/LuaSnip") -- snippet engine
+	--use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+	--use("rafamadriz/friendly-snippets") -- useful snippets
 
-	-- Install nvim autopairs
-	use("windwp/nvim-autopairs")
+	--use("windwp/nvim-autopairs")
 	
 	-- colorscheme
 	use ('joshdick/onedark.vim')	
 	use ('bluz71/vim-nightfly-colors')
-
-	-- status line
-	use("nvim-lualine/lualine.nvim")
-	use("nvim-tree/nvim-web-devicons")
 	
-	-- Install Which Key
-  	use("folke/which-key.nvim")
-  	
-  	-- Treesitter (syntax highlighting)
+	-- Treesitter (syntax highlighting)
   	use("nvim-treesitter/nvim-treesitter")
 	use("HiPhish/nvim-ts-rainbow2")
 	use("windwp/nvim-ts-autotag")
 	
 	-- Managing & installing LSP servers, linters & formatters
-	use("williamboman/mason.nvim") -- In charge of managing LSP servers, linters & formatters
-	use("williamboman/mason-lspconfig.nvim") -- Bridges the gap between mason & lspconfig
+	use("williamboman/mason.nvim") 				-- In charge of managing LSP servers, linters & formatters
+	use("williamboman/mason-lspconfig.nvim") 	-- Bridges the gap between mason & lspconfig
+	
+	-- which key
+	use("folke/which-key.nvim")
 
-	-- Configuring LSP servers
-	use("neovim/nvim-lspconfig") -- Easily configure language servers
-	use("hrsh7th/cmp-nvim-lsp") -- For autocompletion
-	use({
-	  "glepnir/lspsaga.nvim",
-	  branch = "main",
-	  requires = {
-	    { "nvim-tree/nvim-web-devicons" },
-	    { "nvim-treesitter/nvim-treesitter" },
-	  },
-	}) -- Enhanced LSP UIs
-	use("jose-elias-alvarez/typescript.nvim") -- Additional functionality for TypeScript server (e.g., rename file & update imports)
-	use("onsails/lspkind.nvim") -- VSCode-like icons for autocompletion
+	-- status line
+	use("nvim-lualine/lualine.nvim")
 	
-	-- GitHub Copilot
+	-- Github Copilot
 	use("zbirenbaum/copilot.lua")
-	
-	-- Neovim Doom
-	use("shaunsingh/nyoom.nvim")
+
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
